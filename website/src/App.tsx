@@ -11,7 +11,6 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { convertToShortMonth, convertToLongMonth } from 'thailocaledate';
-// import ResultComponent from './components/result';
 
 import { lazy } from 'react';
 

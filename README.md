@@ -3,6 +3,10 @@
 ![NPM Version](https://img.shields.io/npm/v/thailocaledate)
 [![install size](https://packagephobia.com/badge?p=thailocaledate)](https://packagephobia.com/result?p=thailocaledate)
 
+## Demo
+- https://thailocaledatejs.vercel.app
+
+
 ## Usage
 
 - Install with npm or yarn
