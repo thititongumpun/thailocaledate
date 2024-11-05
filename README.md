@@ -1,11 +1,11 @@
 # User Guide
 
 ![NPM Version](https://img.shields.io/npm/v/thailocaledate)
-[![install size](https://packagephobia.com/badge?p=thailocaledate)](https://packagephobia.com/result?p=thailocaledate)
+![install size](https://packagephobia.com/badge?p=thailocaledate)
 
 ## Demo
-- https://thailocaledatejs.vercel.app
 
+- https://thailocaledatejs.vercel.app
 
 ## Usage
 
@@ -20,9 +20,9 @@ yarn add thailocaledate
 - use
 
 ```js
-import { convertToLongMonth } from 'thailocaledate';
+import { convertToThaiLocale } from 'thailocaledate';
 
-convertToLongMonth(new Date('2024-11-04'), { numeric: false }); // "04 พฤศจิกายน 67"
+convertToThaiLocale(new Date('2024-11-04'), { numeric: false }); // "04 พฤศจิกายน 67"
 ```
 
 ## Features

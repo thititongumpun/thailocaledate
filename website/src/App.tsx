@@ -10,7 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { convertToShortMonth, convertToLongMonth } from 'thailocaledate';
+import { convertToThaiLocale, FormatMonth } from 'thailocaledate';
 
 import { lazy } from 'react';
 
@@ -57,20 +57,28 @@ function App() {
         <ResultComponent
           results={[
             {
-              functionName: 'convertToShortMonth(date, { numeric: false })',
-              dateString: convertToShortMonth(date, { numeric: false }),
+              functionName: 'convertToThaiLocale(date, { numeric: false })',
+              dateString: convertToThaiLocale(date, { numeric: false }),
             },
             {
-              functionName: 'convertToShortMonth(date, { numeric: true })',
-              dateString: convertToShortMonth(date, { numeric: true }),
+              functionName: 'convertToThaiLocale(date, { numeric: true })',
+              dateString: convertToThaiLocale(date, { numeric: true }),
             },
             {
-              functionName: 'convertToLongMonth(date, { numeric: false })',
-              dateString: convertToLongMonth(date, { numeric: false }),
+              functionName:
+                'convertToThaiLocale(date, { numeric: false, formatMonth: FormatMonth.Long })',
+              dateString: convertToThaiLocale(date, {
+                numeric: false,
+                formatMonth: FormatMonth.Long,
+              }),
             },
             {
-              functionName: 'convertToLongMonth(date, { numeric: true })',
-              dateString: convertToLongMonth(date, { numeric: true }),
+              functionName:
+                'convertToThaiLocale(date, { numeric: true, formatMonth: FormatMonth.Long })',
+              dateString: convertToThaiLocale(date, {
+                numeric: true,
+                formatMonth: FormatMonth.Long,
+              }),
             },
           ]}
         />

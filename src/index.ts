@@ -1,5 +1,10 @@
 import { ConvertOptions } from './types';
 
+export enum FormatMonth {
+  Short,
+  Long,
+}
+
 export const validateDateFormat = (input: string): Boolean => {
   const dateFormat = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -10,10 +15,11 @@ export const validateDateFormat = (input: string): Boolean => {
   return true;
 };
 
-export const convertToShortMonth = (
+export const convertToThaiLocale = (
   input: Date | string,
-  opt?: ConvertOptions
+  opts: ConvertOptions = { numeric: false }
 ): string => {
+  const { formatMonth = FormatMonth.Short, numeric } = opts;
   if (typeof input === 'string' || input instanceof String) {
     if (!validateDateFormat(input as string)) {
       throw new Error('Invalid date format. Please use YYYY-MM-DD format.');
@@ -23,27 +29,8 @@ export const convertToShortMonth = (
   }
 
   return input.toLocaleDateString('th-TH', {
-    year: opt?.numeric ? 'numeric' : '2-digit',
-    month: 'short',
-    day: opt?.numeric ? 'numeric' : '2-digit',
-  });
-};
-
-export const convertToLongMonth = (
-  input: Date | string,
-  opt?: ConvertOptions
-): string => {
-  if (typeof input === 'string' || input instanceof String) {
-    if (!validateDateFormat(input as string)) {
-      throw new Error('Invalid date format. Please use YYYY-MM-DD format.');
-    }
-
-    input = new Date(input);
-  }
-
-  return input.toLocaleDateString('th-TH', {
-    year: opt?.numeric ? 'numeric' : '2-digit',
-    month: 'long',
-    day: opt?.numeric ? 'numeric' : '2-digit',
+    year: numeric ? 'numeric' : '2-digit',
+    month: formatMonth === FormatMonth.Short ? 'short' : 'long',
+    day: numeric ? 'numeric' : '2-digit',
   });
 };

@@ -2175,10 +2175,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-thailocaledate@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/thailocaledate/-/thailocaledate-0.1.1.tgz#34453413bd8663ddab61be416f15cc46aaaf0e65"
-  integrity sha512-EVm5WbazWL2AKY8eAAcScNK3+urr+Y7PdpWQxRMy7/+8eKqPxUm5cOmSKtvTnWCvv2WERVaqQvvkdq0qSTOz4Q==
+thailocaledate@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/thailocaledate/-/thailocaledate-0.1.4.tgz#ae8f5e1d76768360b858b247a95cacd36b40aaab"
+  integrity sha512-Hx56YL5XCcAZO6sqXgVkCqZjItaZ/1QLyCHAw1xfEVewS3mt6biXQdAkAbfDUXNxovyPOXWKEE5b7fWB9YV0Tg==
 
 thenify-all@^1.0.0:
   version "1.6.0"

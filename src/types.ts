@@ -1,3 +1,8 @@
+import { FormatMonth } from ".";
+
 export type ConvertOptions = {
-  numeric: boolean;
+  formatMonth?: FormatMonth;
+  numeric?: boolean;
 };
+
+
