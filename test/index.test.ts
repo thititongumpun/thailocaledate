@@ -28,25 +28,25 @@ describe('convertToShortMonth', () => {
 
   describe('Input date', () => {
     it('convert to day and year with 2 digit', () => {
-      expect(convertToShortMonth(new Date('2024-11-04'), false)).toBe(
+      expect(convertToShortMonth(new Date('2024-11-04'), { numeric: false })).toBe(
         '04 พ.ย. 67'
       );
-      expect(convertToShortMonth(new Date('2022-05-11'), false)).toBe(
+      expect(convertToShortMonth(new Date('2022-05-11'), { numeric: false })).toBe(
         '11 พ.ค. 65'
       );
-      expect(convertToShortMonth(new Date('2023-01-23'), false)).toBe(
+      expect(convertToShortMonth(new Date('2023-01-23'), { numeric: false })).toBe(
         '23 ม.ค. 66'
       );
     });
 
     it('convert to day and year with numeric', () => {
-      expect(convertToShortMonth(new Date('2024-11-04'), true)).toBe(
+      expect(convertToShortMonth(new Date('2024-11-04'), { numeric: true })).toBe(
         '4 พ.ย. 2567'
       );
-      expect(convertToShortMonth(new Date('2022-05-11'), true)).toBe(
+      expect(convertToShortMonth(new Date('2022-05-11'), { numeric: true })).toBe(
         '11 พ.ค. 2565'
       );
-      expect(convertToShortMonth(new Date('2023-01-23'), true)).toBe(
+      expect(convertToShortMonth(new Date('2023-01-23'), { numeric: true })).toBe(
         '23 ม.ค. 2566'
       );
     });
@@ -54,15 +54,15 @@ describe('convertToShortMonth', () => {
 
   describe('Input date string', () => {
     it('convert to day and year with 2 digit', () => {
-      expect(convertToShortMonth('2024-11-04', false)).toBe('04 พ.ย. 67');
-      expect(convertToShortMonth('2022-05-11', false)).toBe('11 พ.ค. 65');
-      expect(convertToShortMonth('2023-01-23', false)).toBe('23 ม.ค. 66');
+      expect(convertToShortMonth('2024-11-04', { numeric: false })).toBe('04 พ.ย. 67');
+      expect(convertToShortMonth('2022-05-11', { numeric: false })).toBe('11 พ.ค. 65');
+      expect(convertToShortMonth('2023-01-23', { numeric: false })).toBe('23 ม.ค. 66');
     });
 
     it('convert to day and year with numeric', () => {
-      expect(convertToShortMonth('2024-11-04', true)).toBe('4 พ.ย. 2567');
-      expect(convertToShortMonth('2022-05-11', true)).toBe('11 พ.ค. 2565');
-      expect(convertToShortMonth('2023-01-23', true)).toBe('23 ม.ค. 2566');
+      expect(convertToShortMonth('2024-11-04', { numeric: true })).toBe('4 พ.ย. 2567');
+      expect(convertToShortMonth('2022-05-11', { numeric: true })).toBe('11 พ.ค. 2565');
+      expect(convertToShortMonth('2023-01-23', { numeric: true })).toBe('23 ม.ค. 2566');
     });
   });
 });
@@ -74,25 +74,25 @@ describe('convertToLongMonth', () => {
 
   describe('Input with digit', () => {
     it('convert to day and year with 2 digit', () => {
-      expect(convertToLongMonth(new Date('2024-11-04'), false)).toBe(
+      expect(convertToLongMonth(new Date('2024-11-04'), { numeric: false })).toBe(
         '04 พฤศจิกายน 67'
       );
-      expect(convertToLongMonth(new Date('2022-05-11'), false)).toBe(
+      expect(convertToLongMonth(new Date('2022-05-11'), { numeric: false })).toBe(
         '11 พฤษภาคม 65'
       );
-      expect(convertToLongMonth(new Date('2023-01-23'), false)).toBe(
+      expect(convertToLongMonth(new Date('2023-01-23'), { numeric: false })).toBe(
         '23 มกราคม 66'
       );
     });
 
     it('convert to day and year with numeric', () => {
-      expect(convertToLongMonth(new Date('2024-11-04'), true)).toBe(
+      expect(convertToLongMonth(new Date('2024-11-04'), { numeric: true })).toBe(
         '4 พฤศจิกายน 2567'
       );
-      expect(convertToLongMonth(new Date('2022-05-11'), true)).toBe(
+      expect(convertToLongMonth(new Date('2022-05-11'), { numeric: true })).toBe(
         '11 พฤษภาคม 2565'
       );
-      expect(convertToLongMonth(new Date('2023-01-23'), true)).toBe(
+      expect(convertToLongMonth(new Date('2023-01-23'), { numeric: true })).toBe(
         '23 มกราคม 2566'
       );
     });
@@ -100,40 +100,40 @@ describe('convertToLongMonth', () => {
 
   describe('Input date string', () => {
     it('convert to day and year with 2 digit', () => {
-      expect(convertToLongMonth('2024-11-04', false)).toBe('04 พฤศจิกายน 67');
-      expect(convertToLongMonth('2022-05-11', false)).toBe('11 พฤษภาคม 65');
-      expect(convertToLongMonth('2023-01-23', false)).toBe('23 มกราคม 66');
+      expect(convertToLongMonth('2024-11-04', { numeric: false })).toBe('04 พฤศจิกายน 67');
+      expect(convertToLongMonth('2022-05-11', { numeric: false })).toBe('11 พฤษภาคม 65');
+      expect(convertToLongMonth('2023-01-23', { numeric: false })).toBe('23 มกราคม 66');
     });
 
     it('convert to day and year with numeric', () => {
-      expect(convertToLongMonth('2024-11-04', true)).toBe('4 พฤศจิกายน 2567');
-      expect(convertToLongMonth('2022-05-11', true)).toBe('11 พฤษภาคม 2565');
-      expect(convertToLongMonth('2023-01-23', true)).toBe('23 มกราคม 2566');
+      expect(convertToLongMonth('2024-11-04', { numeric: true })).toBe('4 พฤศจิกายน 2567');
+      expect(convertToLongMonth('2022-05-11', { numeric: true })).toBe('11 พฤษภาคม 2565');
+      expect(convertToLongMonth('2023-01-23', { numeric: true })).toBe('23 มกราคม 2566');
     });
   });
 });
 
 describe('Bad Input date string', () => {
   it('YYYY/MM/DD', () => {
-    expect(() => convertToShortMonth('2024/11/04', false)).toThrow(
+    expect(() => convertToShortMonth('2024/11/04', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
-    expect(() => convertToShortMonth('11-05-2022', false)).toThrow(
+    expect(() => convertToShortMonth('11-05-2022', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
-    expect(() => convertToShortMonth('23-01-2023', false)).toThrow(
+    expect(() => convertToShortMonth('23-01-2023', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
   });
 
   it('YYYY/MM/DD', () => {
-    expect(() => convertToLongMonth('2024/11/04', false)).toThrow(
+    expect(() => convertToLongMonth('2024/11/04', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
-    expect(() => convertToLongMonth('11-05-2022', false)).toThrow(
+    expect(() => convertToLongMonth('11-05-2022', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
-    expect(() => convertToLongMonth('23-01-2023', false)).toThrow(
+    expect(() => convertToLongMonth('23-01-2023', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
   });

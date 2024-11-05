@@ -1,3 +1,5 @@
+import { ConvertOptions } from "./types";
+
 export const validateDateFormat = (input: string): Boolean => {
   const dateFormat = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -10,7 +12,7 @@ export const validateDateFormat = (input: string): Boolean => {
 
 export const convertToShortMonth = (
   input: Date | string,
-  numeric?: boolean
+  opt?: ConvertOptions
 ): string => {
   if (typeof input === 'string' || input instanceof String) {
     if (!validateDateFormat(input as string)) {
@@ -21,15 +23,15 @@ export const convertToShortMonth = (
   }
 
   return input.toLocaleDateString('th-TH', {
-    year: numeric ? 'numeric' : '2-digit',
+    year: opt?.numeric ? 'numeric' : '2-digit',
     month: 'short',
-    day: numeric ? 'numeric' : '2-digit',
+    day: opt?.numeric ? 'numeric' : '2-digit',
   });
 };
 
 export const convertToLongMonth = (
   input: Date | string,
-  numeric?: boolean
+  opt?: ConvertOptions
 ): string => {
   if (typeof input === 'string' || input instanceof String) {
     if (!validateDateFormat(input as string)) {
@@ -40,8 +42,8 @@ export const convertToLongMonth = (
   }
 
   return input.toLocaleDateString('th-TH', {
-    year: numeric ? 'numeric' : '2-digit',
+    year: opt?.numeric ? 'numeric' : '2-digit',
     month: 'long',
-    day: numeric ? 'numeric' : '2-digit',
+    day: opt?.numeric ? 'numeric' : '2-digit',
   });
 };
