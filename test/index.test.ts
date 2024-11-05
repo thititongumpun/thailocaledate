@@ -166,16 +166,31 @@ describe('Input date string', () => {
 
 describe('Bad Input date string', () => {
   it('YYYY/MM/DD', () => {
-    expect(() => convertToThaiLocale('2024/11/04', { numeric: false })).toThrow(
-      'Invalid date format. Please use YYYY-MM-DD format.'
+    expect(() => convertToThaiLocale('2024/11/04', { numeric: false })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
     );
-    expect(() => convertToThaiLocale('11-05-2022', { numeric: false })).toThrow(
-      'Invalid date format. Please use YYYY-MM-DD format.'
+    expect(() => convertToThaiLocale('11-05-2022', { numeric: false })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
     );
-    expect(() => convertToThaiLocale('23-01-2023', { numeric: false })).toThrow(
-      'Invalid date format. Please use YYYY-MM-DD format.'
+    expect(() => convertToThaiLocale('23-01-2023', { numeric: false })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
     );
   });
+
+  test('Invalid date format', () => {
+    expect(() => convertToThaiLocale('2024-11-04-01', { numeric: false })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
+    );
+    expect(() => convertToThaiLocale('2024-11', { numeric: false })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
+    );
+    expect(() => getThaiDay('2024', { format: 'long' })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
+    );
+    expect(() => getThaiDay('2024', { format: 'short' })).toThrowError(
+      new Error('Invalid date format. Please use YYYY-MM-DD format.')
+    );
+  })
 });
 
 describe('Get Locale Thai day', () => {
