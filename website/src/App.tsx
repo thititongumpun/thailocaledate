@@ -10,7 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { convertToThaiLocale, FormatMonth } from 'thailocaledate';
+import { convertToThaiLocale, FormatMonth, getThaiDay } from 'thailocaledate';
 
 import { lazy } from 'react';
 
@@ -57,16 +57,28 @@ function App() {
         <ResultComponent
           results={[
             {
-              functionName: 'convertToThaiLocale(date, { numeric: false })',
+              functionName: `getThaiDay(${date}, { format: 'short' })`,
+              dateString: getThaiDay(date, {
+                format: 'short',
+              }),
+            },
+            {
+              functionName: `getThaiDay(${date}, { format: 'long' })`,
+              dateString: getThaiDay(date, {
+                format: 'long',
+              }),
+            },
+            {
+              functionName: `convertToThaiLocale(${date}, { numeric: false })`,
               dateString: convertToThaiLocale(date, { numeric: false }),
             },
             {
-              functionName: 'convertToThaiLocale(date, { numeric: true })',
+              functionName: `convertToThaiLocale(${date}, { numeric: true })`,
               dateString: convertToThaiLocale(date, { numeric: true }),
             },
             {
               functionName:
-                'convertToThaiLocale(date, { numeric: false, formatMonth: FormatMonth.Long })',
+                `convertToThaiLocale(${date}, { numeric: false, formatMonth: FormatMonth.Long })`,
               dateString: convertToThaiLocale(date, {
                 numeric: false,
                 formatMonth: FormatMonth.Long,
@@ -74,7 +86,7 @@ function App() {
             },
             {
               functionName:
-                'convertToThaiLocale(date, { numeric: true, formatMonth: FormatMonth.Long })',
+                `convertToThaiLocale(${date}, { numeric: true, formatMonth: FormatMonth.Long })`,
               dateString: convertToThaiLocale(date, {
                 numeric: true,
                 formatMonth: FormatMonth.Long,

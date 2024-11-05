@@ -1,4 +1,4 @@
-import { ConvertOptions } from './types';
+import { ConvertOptions, WeekOptions } from './types';
 
 export enum FormatMonth {
   Short,
@@ -32,5 +32,23 @@ export const convertToThaiLocale = (
     year: numeric ? 'numeric' : '2-digit',
     month: formatMonth === FormatMonth.Short ? 'short' : 'long',
     day: numeric ? 'numeric' : '2-digit',
+  });
+};
+
+export const getThaiDay = (
+  input: Date | string,
+  opts: WeekOptions = { format: 'short' }
+): string => {
+  const { format = 'short' } = opts;
+  if (typeof input === 'string' || input instanceof String) {
+    if (!validateDateFormat(input as string)) {
+      throw new Error('Invalid date format. Please use YYYY-MM-DD format.');
+    }
+
+    input = new Date(input);
+  }
+
+  return input.toLocaleDateString('th-Th', {
+    weekday: format === 'short' ? 'short' : 'long',
   });
 };

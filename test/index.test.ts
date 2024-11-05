@@ -1,4 +1,9 @@
-import { convertToThaiLocale, FormatMonth, validateDateFormat } from '../src';
+import {
+  convertToThaiLocale,
+  FormatMonth,
+  getThaiDay,
+  validateDateFormat,
+} from '../src';
 
 describe('validateDateFormat', () => {
   it('should throw an error for invalid date format', () => {
@@ -170,5 +175,20 @@ describe('Bad Input date string', () => {
     expect(() => convertToThaiLocale('23-01-2023', { numeric: false })).toThrow(
       'Invalid date format. Please use YYYY-MM-DD format.'
     );
+  });
+});
+
+describe('Get Locale Thai day', () => {
+  it('Input date must return string locale day', () => {
+    expect(getThaiDay(new Date('2024-11-05'), { format: 'long' })).toBe(
+      'วันอังคาร'
+    );
+    expect(getThaiDay(new Date('2022-01-15'), { format: 'long' })).toBe(
+      'วันเสาร์'
+    );
+    expect(getThaiDay(new Date('1993-05-18'), { format: 'long' })).toBe(
+      'วันอังคาร'
+    );
+    expect(getThaiDay(new Date('1993-05-18'), { format: 'short' })).toBe('อ.');
   });
 });
