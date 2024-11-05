@@ -1,5 +1,8 @@
 # thailocaledate User Guide
 
+![NPM Version](https://img.shields.io/npm/v/thailocatedate)
+[![install size](https://packagephobia.com/badge?p=thailocaledate)](https://packagephobia.com/result?p=thailocaledate)
+
 ## Usage
 
 - Install with npm or yarn

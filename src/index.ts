@@ -1,4 +1,4 @@
-import { ConvertOptions } from "./types";
+import { ConvertOptions } from './types';
 
 export const validateDateFormat = (input: string): Boolean => {
   const dateFormat = /^\d{4}-\d{2}-\d{2}$/;
