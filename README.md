@@ -5,7 +5,7 @@
 
 ## Demo
 
-- https://thailocaledatejs.vercel.app
+[`Demo`](https://thailocaledate.vercel.app)
 
 ## Usage
 
